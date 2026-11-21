@@ -77,3 +77,23 @@
     border-color: var(--jm-border);
   }
 }
+
+/* Changed-value flash (visualizers). Color only, so it also runs under reduced motion. */
+@keyframes jm-flash {
+  from {
+    background-color: color-mix(in srgb, var(--jm-accent) 45%, transparent);
+  }
+  /* no `to`: animates back to the element's own background */
+}
+
+.jm-flash {
+  animation: jm-flash 900ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    scroll-behavior: auto !important;
+  }
+}

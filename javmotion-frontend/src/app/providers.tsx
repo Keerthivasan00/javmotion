@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { MotionConfig } from 'framer-motion'
 import { useEffect, useState, type ReactNode } from 'react'
 import { useThemeStore } from '@/lib/theme/themeStore'
 
@@ -17,5 +18,10 @@ export function Providers({ children }: { children: ReactNode }) {
     document.documentElement.dataset.theme = theme
   }, [theme])
 
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  return (
+    <QueryClientProvider client={queryClient}>
+      {/* "user": honour prefers-reduced-motion — no movement, color changes stay. */}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
+    </QueryClientProvider>
+  )
 }

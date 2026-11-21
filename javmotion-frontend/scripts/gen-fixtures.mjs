@@ -70,17 +70,20 @@ function build(source, className, raw) {
   const ptr = (index, label) => ({ ref: 'h1', index, role: 'pointer', label })
 
   push(4, base)
-  push(5, { ...base, n: int(n) })
+  push(5, { ...base, n: int(n) }) // outer loop header (first check)
   const sortedFrom = []
   for (let i = 0; i < n - 1; i++) {
+    const done = () => sortedFrom.map((k) => ({ ref: 'h1', index: k, role: 'found' }))
+    let lastJ = 0
     for (let j = 0; j < n - 1 - i; j++) {
+      lastJ = j
       const loc = { ...base, n: int(n), i: int(i), j: int(j) }
-      const done = sortedFrom.map((k) => ({ ref: 'h1', index: k, role: 'found' }))
+      push(6, loc, [ptr(j, 'j'), ...done()]) // inner loop header
       push(7, loc, [
         { ref: 'h1', index: j, role: 'compare' },
         { ref: 'h1', index: j + 1, role: 'compare' },
         ptr(j, 'j'),
-        ...done,
+        ...done(),
       ])
       if (arr[j] > arr[j + 1]) {
         ;[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
@@ -88,11 +91,15 @@ function build(source, className, raw) {
           { ref: 'h1', index: j, role: 'swap' },
           { ref: 'h1', index: j + 1, role: 'swap' },
           ptr(j, 'j'),
-          ...done,
+          ...done(),
         ])
       }
     }
     sortedFrom.push(n - 1 - i)
+    // Inner header re-checked: condition false (JDI shows j before the update runs).
+    push(6, { ...base, n: int(n), i: int(i), j: int(lastJ) }, done())
+    // Back to the outer header.
+    push(5, { ...base, n: int(n), i: int(i) }, done())
   }
   sortedFrom.push(0)
   const all = arr.map((_, k) => ({ ref: 'h1', index: k, role: 'found' }))
@@ -132,6 +139,8 @@ function build(source, className, raw) {
     revId = `h${next++}`
     heap[revId] = str(rev)
   }
+  // Header re-checked after the last iteration: condition false, loop exits.
+  push(5, { s: ref('h1'), rev: ref(revId), i: int(0) })
   push(8, { s: ref('h1'), rev: ref(revId) }, [{ ref: revId, role: 'found' }])
   stdout += `${rev}\n`
   steps.push({ line: 9, locals: {}, heap: snap(), stdout, event: 'END' })

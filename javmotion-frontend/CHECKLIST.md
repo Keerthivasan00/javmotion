@@ -4,7 +4,7 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Step 3 → visualizer registry + VariableInspector, ArrayVisualizer, StringVisualizer, LoopVisualizer, CallStack (replace temporary `StepSummary` in `VisualizationPanel`)
+**Next up:** Step 5 (connect Concepts page) — needs backend Step B2 endpoints first.
 
 **Last updated:** 2026-11-21
 
@@ -57,15 +57,15 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 
 ## Step 3 — Basic Visualizers (Phase 2)
 
-- [ ] Visualizer registry (`registry.ts`) + `VisualizationPanel` tabs with auto-select
-- [ ] `VariableInspector` (changed value flash)
-- [ ] `ArrayVisualizer` (indexed cells, pointers, swap animation, highlight colors)
-- [ ] `StringVisualizer` (char tiles, index pointer, reverse animation)
-- [ ] `LoopVisualizer` (init/condition/update, iteration counter, true/false badge)
-- [ ] `CallStack` (basic)
+- [x] Visualizer registry (`registry.ts`) + `VisualizationPanel` tabs with auto-select (`applies`/`priority` evaluated per trace, not per step, so tabs don't jump)
+- [x] `VariableInspector` (changed value flash, new variable slides in, all-frames toggle)
+- [x] `ArrayVisualizer` (indexed cells, pointers, swap animation, highlight colors, "+N more")
+- [x] `StringVisualizer` (char tiles, index pointer, new-char slide-in, "new String object" badge)
+- [x] `LoopVisualizer` (init/condition/update, iteration counter, true/false badge, history, nested loops). Loops detected from back-edges in `loopAnalysis.ts`; header text read from editor source
+- [x] `CallStack` (basic, click frame to see its locals)
 - [x] Console shows stdout up to current step
-- [ ] `prefers-reduced-motion` support
-- [ ] Component tests for each visualizer using fixtures
+- [x] `prefers-reduced-motion` support (`MotionConfig reducedMotion="user"`; flash is color-only)
+- [x] Component tests for each visualizer using fixtures (+ loopAnalysis, registry, panel)
 
 > ⚠️ After Step 3: do the JDI spike in backend checklist (Step B0) before continuing.
 
@@ -144,3 +144,5 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 - 2026-11-21: Architecture docs written. Checklist created. Nothing implemented yet.
 - 2026-11-21: Boilerplate done — Step 1 complete, Step 1b nearly complete (Format button + pane-size persistence left), trace types added. `npm run build`, `lint`, `test:run` all pass. Versions: React 19, Vite 8, Tailwind 4, React Router 7, Zod 4. Windows: run Vitest from `D:\` (capital), lowercase `d:\` breaks it.
 - 2026-11-21: Step 1b + Step 2 complete. Format button (`formatJava.ts`, brace-depth re-indent), pane sizes persisted, Zod `parseTrace`, 3 fixtures (copied to backend trace-samples), playback feature (`features/playback/`: store, selectors, ticker, shortcuts, controls, demo traces). Console stdout-by-step done early (Step 3 item). 29 tests pass; build, lint, prettier clean.
+- 2026-11-21: Step 3 complete. Visualizers in `features/visualizers/` (registry, Variables, Array, String, Loop, Call Stack), temporary `StepSummary` removed. Fixtures regenerated with realistic loop-header revisits (bubble sort now 26 steps, string reverse 13); backend `trace-samples/` re-copied. Empty `main` args hidden from Array tab. 48 tests pass; build, lint, prettier clean. Note: framer-motion grew the lazy Playground chunk 53 → 106 KB gzip (initial bundle unchanged); `LazyMotion` can trim it later.
+- 2026-11-21: Added real JDI traces from the backend spike as fixtures (`jdi-*.json`) + `jdiFixtures.test.ts`: schema, loop detection, registry all work on real tracer output. 57 tests pass.

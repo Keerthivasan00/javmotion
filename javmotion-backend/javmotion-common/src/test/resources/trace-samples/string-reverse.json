@@ -453,6 +453,47 @@
     {
       "index": 10,
       "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "StringReverse",
+          "line": 5,
+          "locals": {
+            "s": {
+              "kind": "REF",
+              "ref": "h1"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h6"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h1": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h6": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 11,
+      "event": "LINE",
       "line": 8,
       "stack": [
         {
@@ -493,7 +534,7 @@
       ]
     },
     {
-      "index": 11,
+      "index": 12,
       "event": "END",
       "line": 9,
       "stack": [],
