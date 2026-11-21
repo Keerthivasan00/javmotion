@@ -1,11 +1,12 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { DEMO_TRACES, usePlaybackStore } from '@/features/playback'
+import { usePlaybackStore } from '@/features/playback'
 import { parseTrace } from '@/lib/trace/schema'
 import type { Trace } from '@/lib/trace/types'
 import bubbleJson from '@/test/fixtures/traces/array-bubble-sort.json'
 import forLoopJson from '@/test/fixtures/traces/for-loop.json'
 import stringJson from '@/test/fixtures/traces/string-reverse.json'
+import { FIXTURE_SOURCES } from '@/test/fixtures/traces/sources'
 import { ArrayVisualizer } from './array/ArrayVisualizer'
 import { detectSwaps } from './array/detectSwaps'
 import { CallStack } from './callstack/CallStack'
@@ -19,7 +20,7 @@ import { VisualizationPanel } from './VisualizationPanel'
 const forLoop = parseTrace(forLoopJson)
 const bubble = parseTrace(bubbleJson)
 const strRev = parseTrace(stringJson)
-const codeOf = (id: string) => DEMO_TRACES.find((d) => d.id === id)!.code
+const codeOf = (id: string) => FIXTURE_SOURCES[id]
 
 const props = (trace: Trace, index: number, source?: string): VisualizerProps => ({
   trace,

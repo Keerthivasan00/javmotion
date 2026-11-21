@@ -62,6 +62,10 @@ export interface ActiveLoop extends LoopInfo {
   iterations: number
   /** True while the current step is the header line itself. */
   atHeader: boolean
+  /** True while the current step is the last line of the body (do-while condition line). */
+  atEnd: boolean
+  /** At the end line: does execution go back into the loop? (do-while condition result) */
+  endCondition?: boolean
   /** Condition result of the most recent header check (undefined before the first check). */
   lastCondition?: boolean
   /** Locals that change between header visits (e.g. `i`). */
@@ -74,6 +78,11 @@ function conditionAt(steps: TraceStep[], k: number, loop: LoopInfo): boolean {
   const next = steps[k + 1]
   if (!next || !sameFrame(steps[k], next)) return true // calls inside the condition: assume true
   return next.line > loop.header && next.line <= loop.end
+}
+
+function continuesLoop(steps: TraceStep[], k: number, loop: LoopInfo): boolean {
+  const next = steps[k + 1]
+  return !!next && sameFrame(steps[k], next) && next.line >= loop.header && next.line <= loop.end
 }
 
 /** Loops enclosing the step at `index`, outermost first. */
@@ -112,6 +121,8 @@ export function activeLoops(trace: Trace, index: number): ActiveLoop[] {
         ...loop,
         iterations: history.filter((h) => h.condition).length,
         atHeader: step.line === loop.header,
+        atEnd: step.line === loop.end,
+        endCondition: step.line === loop.end ? continuesLoop(steps, index, loop) : undefined,
         lastCondition,
         loopVars,
         history,

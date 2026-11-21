@@ -6,6 +6,7 @@ import {
   useDefaultLayout,
   type LayoutStorage,
 } from 'react-resizable-panels'
+import { DemoPicker } from '@/features/concepts'
 import { ConsolePanel } from '@/features/console'
 import { CodeEditor, EditorToolbar } from '@/features/editor'
 import { VisualizationPanel } from '@/features/visualizers'
@@ -53,7 +54,7 @@ function DesktopLayout() {
           </Panel>
           <Separator className={cn('w-1', handle)} />
           <Panel id="visualization" defaultSize="45" minSize="25">
-            <VisualizationPanel />
+            <VisualizationPanel empty={<DemoPicker />} />
           </Panel>
         </Group>
       </Panel>
@@ -90,7 +91,7 @@ function MobileLayout() {
       </div>
       <div className="min-h-0 flex-1">
         {tab === 'Code' && <CodeEditor />}
-        {tab === 'Visualize' && <VisualizationPanel />}
+        {tab === 'Visualize' && <VisualizationPanel empty={<DemoPicker />} />}
         {tab === 'Console' && <ConsolePanel />}
       </div>
     </div>

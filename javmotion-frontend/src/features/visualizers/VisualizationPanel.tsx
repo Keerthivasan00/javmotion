@@ -1,9 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type ReactNode } from 'react'
 import { Clapperboard, X } from 'lucide-react'
 import { IconButton } from '@/components/ui/IconButton'
 import { useEditorStore } from '@/features/editor'
 import {
-  DEMO_TRACES,
   PlaybackControls,
   topFrame,
   usePlaybackShortcuts,
@@ -16,7 +15,14 @@ import { applicableVisualizers, defaultVisualizer } from './registry'
 import { shortType } from './shared/traceUtils'
 import type { VisualizerId } from './types'
 
-export function VisualizationPanel() {
+interface VisualizationPanelProps {
+  /** Program the trace refers to; defaults to the editor's source. */
+  source?: string
+  /** Shown while no trace is loaded. */
+  empty?: ReactNode
+}
+
+export function VisualizationPanel({ source, empty }: VisualizationPanelProps) {
   usePlaybackTicker()
   usePlaybackShortcuts()
   const trace = usePlaybackStore((s) => s.trace)
@@ -26,11 +32,11 @@ export function VisualizationPanel() {
       {trace ? (
         <>
           {/* Re-mount per trace so the auto-selected tab resets. */}
-          <TraceView key={traceKey(trace)} trace={trace} />
+          <TraceView key={traceKey(trace)} trace={trace} source={source} />
           <PlaybackControls />
         </>
       ) : (
-        <EmptyState />
+        (empty ?? <DefaultEmptyState />)
       )}
     </section>
   )
@@ -44,10 +50,11 @@ function traceKey(trace: Trace) {
   return id
 }
 
-function TraceView({ trace }: { trace: Trace }) {
+function TraceView({ trace, source: sourceProp }: { trace: Trace; source?: string }) {
   const index = usePlaybackStore((s) => s.index)
   const clear = usePlaybackStore((s) => s.clear)
-  const source = useEditorStore((s) => s.source)
+  const editorSource = useEditorStore((s) => s.source)
+  const source = sourceProp ?? editorSource
 
   const visualizers = useMemo(() => applicableVisualizers(trace), [trace])
   const [chosen, setChosen] = useState<VisualizerId>(() => defaultVisualizer(trace).id)
@@ -109,47 +116,14 @@ function TraceView({ trace }: { trace: Trace }) {
   )
 }
 
-function EmptyState() {
-  const [error, setError] = useState<string | null>(null)
-
-  const loadDemo = async (id: string) => {
-    const demo = DEMO_TRACES.find((d) => d.id === id)
-    if (!demo) return
-    try {
-      const trace = await demo.load()
-      useEditorStore.getState().loadTemplate(demo.code)
-      usePlaybackStore.getState().load(trace)
-      setError(null)
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Could not load demo trace')
-    }
-  }
-
+function DefaultEmptyState() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center">
       <Clapperboard size={40} className="text-accent" aria-hidden="true" />
-      <p className="font-medium">Click Visualize to see your code in motion</p>
+      <p className="font-medium">Nothing to play yet</p>
       <p className="max-w-xs text-sm text-muted">
         Variables, arrays, loops and memory will animate here step by step.
       </p>
-      <label className="mt-2 flex items-center gap-2 text-sm text-muted">
-        Try a demo
-        <select
-          className="h-8 rounded-md border bg-surface-2 px-2 text-sm text-fg"
-          defaultValue=""
-          onChange={(e) => void loadDemo(e.target.value)}
-        >
-          <option value="" disabled>
-            Choose…
-          </option>
-          {DEMO_TRACES.map((d) => (
-            <option key={d.id} value={d.id}>
-              {d.title}
-            </option>
-          ))}
-        </select>
-      </label>
-      {error && <p className="text-sm text-error">{error}</p>}
     </div>
   )
 }

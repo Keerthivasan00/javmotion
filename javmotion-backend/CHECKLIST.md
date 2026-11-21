@@ -4,7 +4,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Frontend Step 5 (connect Concepts page to these endpoints). Backend: Step B3 (DB) when starting Phase 3. Still pending: run `spikes/jdi-spike/docker-test.sh` once Docker is installed.
+**Next up:** Step B3 (MySQL + Flyway; needs Docker for `docker-compose` and Testcontainers). Still pending: run `spikes/jdi-spike/docker-test.sh` once Docker is installed. (Frontend Step 5 done — Concepts page uses B2.)
 
 **Last updated:** 2026-11-21
 

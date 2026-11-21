@@ -23,6 +23,7 @@ export function LoopVisualizer({ trace, index, source }: VisualizerProps) {
           loop={loop}
           depth={depth}
           headerText={lines?.[loop.header - 1]}
+          endText={lines?.[loop.end - 1]}
         />
       ))}
     </div>
@@ -33,15 +34,30 @@ function LoopCard({
   loop,
   depth,
   headerText,
+  endText,
 }: {
   loop: ActiveLoop
   depth: number
   headerText?: string
+  endText?: string
 }) {
-  const header = parseLoopHeader(headerText)
+  // do-while: the header line is the first body line; the condition sits on `} while (...)`.
+  const bottom = /^\s*\}\s*while\s*\(/.test(endText ?? '') ? parseLoopHeader(endText) : null
+  const isDoWhile = bottom !== null && parseLoopHeader(headerText)?.kind === 'loop'
+  const header =
+    isDoWhile && bottom
+      ? { kind: 'do-while' as const, condition: bottom.condition }
+      : parseLoopHeader(headerText)
   const history = loop.history.slice(-HISTORY_LIMIT)
   const hidden = loop.history.length - history.length
-  const condition = loop.atHeader ? loop.lastCondition : undefined
+  const atCheck = isDoWhile ? loop.atEnd : loop.atHeader
+  const condition = isDoWhile
+    ? loop.atEnd
+      ? loop.endCondition
+      : undefined
+    : loop.atHeader
+      ? loop.lastCondition
+      : undefined
 
   return (
     <section
@@ -96,8 +112,8 @@ function LoopCard({
         </div>
       )}
 
-      {!loop.atHeader && <p className="mb-2 text-xs text-muted">Running the loop body…</p>}
-      {loop.atHeader && condition === false && (
+      {!atCheck && <p className="mb-2 text-xs text-muted">Running the loop body…</p>}
+      {atCheck && condition === false && (
         <p className="mb-2 text-xs text-error">Condition is false — the loop ends here.</p>
       )}
 

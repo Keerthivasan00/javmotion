@@ -4,7 +4,7 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Step 5 (connect Concepts page) — backend B2 endpoints are ready; response is `{ key, title, code, trace }`, sample responses in `src/test/fixtures/concepts/`.
+**Next up:** Step 6 (Run code) — needs backend B3 (DB) + B4 (worker/sandbox, needs Docker) first. Meanwhile: manual browser check of Concepts page against a running API.
 
 **Last updated:** 2026-11-21
 
@@ -71,11 +71,11 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 
 ## Step 5 — Connect Concept Visualizers to Backend (Phase 2)
 
-- [ ] TanStack Query setup in providers
-- [ ] `conceptApi.ts` for `/visualizer/string-reverse`, `/visualizer/array`, `/visualizer/loops`
-- [ ] Concepts page: `ConceptForm` (input) → fetch trace → playback
-- [ ] Remove fake fixtures from runtime (keep for tests)
-- [ ] Render cold-start message ("Waking up server…")
+- [x] TanStack Query setup in providers (was already there; mutations `retry: false`)
+- [x] `conceptApi.ts` for `/visualizer/string-reverse`, `/visualizer/array`, `/visualizer/loops` (Zod-validates the trace; `ApiError.fieldErrors` for validation errors)
+- [x] Concepts page: tabs String/Array/Loops, `ConceptForm` → fetch → playback, `CodeView` with current-line highlight, console, default example auto-loads
+- [x] Remove fake fixtures from runtime (keep for tests) — Playground "Try a demo" (`DemoPicker`) now calls the concept API; `demoTraces.ts` deleted, sources moved to `src/test/fixtures/traces/sources.ts`
+- [x] Render cold-start message ("Waking up server…") after 3 s pending (`useDelayedFlag`)
 
 ## Step 6 — Run Code / Compiler (Phase 3)
 
@@ -147,3 +147,4 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 - 2026-11-21: Step 3 complete. Visualizers in `features/visualizers/` (registry, Variables, Array, String, Loop, Call Stack), temporary `StepSummary` removed. Fixtures regenerated with realistic loop-header revisits (bubble sort now 26 steps, string reverse 13); backend `trace-samples/` re-copied. Empty `main` args hidden from Array tab. 48 tests pass; build, lint, prettier clean. Note: framer-motion grew the lazy Playground chunk 53 → 106 KB gzip (initial bundle unchanged); `LazyMotion` can trim it later.
 - 2026-11-21: Added real JDI traces from the backend spike as fixtures (`jdi-*.json`) + `jdiFixtures.test.ts`: schema, loop detection, registry all work on real tracer output. 57 tests pass.
 - 2026-11-21: Recorded real backend concept responses into `src/test/fixtures/concepts/` + `conceptFixtures.test.ts` (schema, lines→code, default tab, loop detection). 69 tests pass.
+- 2026-11-21: Step 5 complete. `features/concepts/` (api, form, CodeView, DemoPicker, presets). `VisualizationPanel` now takes `source` + `empty` props. Do-while loops: condition read from the `} while (...)` line and badge shown there. 81 tests pass (page tests mock fetch with real recorded backend responses); build, lint, prettier clean. Not checked in a real browser yet. Note: `.env.development` points to port 8080, which a local Apache uses — run the API with `PORT=8090` and set `VITE_API_BASE_URL` in `.env.development.local`.

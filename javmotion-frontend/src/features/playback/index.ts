@@ -1,5 +1,4 @@
 export { PlaybackControls } from './PlaybackControls'
-export { DEMO_TRACES, type DemoTrace } from './demoTraces'
 export { BASE_INTERVAL_MS, SPEEDS, usePlaybackStore, type Speed } from './playbackStore'
 export {
   changedLocals,

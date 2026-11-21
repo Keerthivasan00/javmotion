@@ -6,6 +6,8 @@ export interface ApiErrorBody {
   code?: string
   detail?: string
   traceId?: string
+  /** Field → message, present when code === 'VALIDATION_FAILED'. */
+  errors?: Record<string, string>
 }
 
 export class ApiError extends Error {
@@ -13,6 +15,7 @@ export class ApiError extends Error {
   readonly code?: string
   readonly detail?: string
   readonly traceId?: string
+  readonly fieldErrors: Record<string, string>
 
   constructor(body: ApiErrorBody) {
     super(body.detail || body.title || `Request failed (${body.status})`)
@@ -21,6 +24,7 @@ export class ApiError extends Error {
     this.code = body.code
     this.detail = body.detail
     this.traceId = body.traceId
+    this.fieldErrors = body.errors ?? {}
   }
 
   /** Status 0 = request never reached the server (offline, CORS, server asleep). */
