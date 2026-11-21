@@ -1,3 +1,12 @@
+# Local development. Defaults match docker-compose.yml (MySQL on 3306).
+# Using a locally installed MySQL instead? Run scripts/create-local-db.sql and set DB_URL,
+# e.g. DB_URL=jdbc:mysql://localhost:3300/javmotion
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/javmotion}
+    username: ${DB_USERNAME:javmotion}
+    password: ${DB_PASSWORD:javmotion}
+
 logging:
   level:
     com.javmotion: DEBUG

@@ -1,0 +1,23 @@
+# Local dev dependencies. Start: docker compose up -d
+# The API's dev profile connects with these defaults (application-dev.yml).
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: javmotion-mysql
+    environment:
+      MYSQL_DATABASE: javmotion
+      MYSQL_USER: javmotion
+      MYSQL_PASSWORD: javmotion
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-ujavmotion", "-pjavmotion"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  mysql-data:

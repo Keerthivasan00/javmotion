@@ -1,11 +1,13 @@
 package com.javmotion.api.config;
 
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /** Allow the React app (localhost:5173 in dev, GitHub Pages in prod) to call /api/**. */
 @Configuration
+@EnableConfigurationProperties(AppProperties.class) // also registers it in @WebMvcTest slices
 public class CorsConfig implements WebMvcConfigurer {
 
     private final AppProperties properties;

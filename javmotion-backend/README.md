@@ -7,7 +7,7 @@
 
 ## Stack
 
-Java 21 · Spring Boot 4.2 · Maven (wrapper) · Jackson 3 · JUnit 5 — later: Spring Data JPA, MySQL, Flyway, Spring Security, Docker, JDI
+Java 21 · Spring Boot 4.2 · Maven (wrapper) · Jackson 3 · Spring Data JPA · MySQL 8 · Flyway · JUnit 5 + Testcontainers — later: Spring Security, Docker sandbox, JDI tracer
 
 ## Modules
 
@@ -22,11 +22,17 @@ Java 21 · Spring Boot 4.2 · Maven (wrapper) · Jackson 3 · JUnit 5 — later:
 
 - **JDK 21+** with `JAVA_HOME` pointing to it (JDK 24 works; code compiles with `--release 21`).
 - No Maven install needed — use `./mvnw` (or `mvnw.cmd` on Windows).
+- **MySQL 8** for the API (from Step B3). Either:
+  - Docker: `docker compose up -d` (matches the dev defaults), or
+  - a local install: run `mysql -u root -p -P <port> < scripts/create-local-db.sql`, then set
+    `DB_URL=jdbc:mysql://localhost:<port>/javmotion` (user/password default to `javmotion`).
+
+  Flyway creates the tables on first start (`src/main/resources/db/migration`).
 
 ## Run
 
 ```bash
-./mvnw verify                                  # build + all tests
+./mvnw verify                                  # build + all tests (DB tests skip without Docker/DB_URL)
 ./mvnw -pl javmotion-api -am spring-boot:run   # API on http://localhost:8080
 ```
 
@@ -47,9 +53,17 @@ Different port: `PORT=8090 ./mvnw -pl javmotion-api -am spring-boot:run` (then u
 | `SPRING_PROFILES_ACTIVE` | `dev` | api |
 | `CORS_ALLOWED_ORIGINS` | `http://localhost:5173` | api |
 | `WORKER_TOKEN` | `dev-worker-token` | worker (later api too) |
+| `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` | dev: `jdbc:mysql://localhost:3306/javmotion`, `javmotion`, `javmotion`; prod: required | api |
 | `SANDBOX_IMAGE`, `SANDBOX_MAX_CONCURRENT`, `JOBS_DIR` | see `application.yml` | worker |
 
-DB, JWT and other settings arrive with their checklist steps.
+JWT and other settings arrive with their checklist steps.
+
+## Database tests
+
+- `ExecutionPersistenceTestcontainersTest` — real MySQL in Docker; skipped when Docker is missing.
+- `ExecutionPersistenceLocalMySqlTest` — same checks against an existing MySQL; runs only when
+  `DB_URL` is set (each test rolls back):
+  `DB_URL=jdbc:mysql://localhost:3300/javmotion DB_USERNAME=javmotion DB_PASSWORD=javmotion ./mvnw -pl javmotion-api -am test`
 
 ## API package layout (package-by-feature)
 
@@ -58,8 +72,8 @@ com.javmotion.api
 ├── config/        AppProperties, CorsConfig
 ├── common/error/  ApiException, GlobalExceptionHandler (ProblemDetail + "code")
 ├── system/        GET /api/v1/system/ping
-├── execution/     (B3/B4)
-├── visualizer/    (B2)
+├── execution/     Execution entity + status machine, ExecutionTrace, repositories (B3); API (B4)
+├── visualizer/    POST /api/v1/visualizer/* concept traces (B2)
 ├── program/       (B7)
 ├── user/          (B7)
 └── learning/      (B7)
