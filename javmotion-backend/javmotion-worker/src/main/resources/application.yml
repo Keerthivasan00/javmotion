@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: javmotion-worker
+
+server:
+  port: ${PORT:8081}
+
+worker:
+  token: ${WORKER_TOKEN:dev-worker-token}
+  sandbox-image: ${SANDBOX_IMAGE:javmotion-sandbox:21}
+  max-concurrent: ${SANDBOX_MAX_CONCURRENT:4}
+  jobs-dir: ${JOBS_DIR:./.jobs}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

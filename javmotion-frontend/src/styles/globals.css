@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+/* `dark:` utilities follow the data-theme attribute on <html>, not the OS setting */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* Brand tokens — see docs/architecture/frontend-architecture.md §11 */
+:root,
+:root[data-theme='dark'] {
+  --jm-bg: #0b1120;
+  --jm-surface: #111827;
+  --jm-surface-2: #1a2335;
+  --jm-border: #273449;
+  --jm-text: #f9fafb;
+  --jm-text-muted: #9ca3af;
+  --jm-primary: #2563eb;
+  --jm-primary-hover: #1d4ed8;
+  --jm-accent: #a78bfa;
+  --jm-success: #22c55e;
+  --jm-error: #ef4444;
+  --jm-warning: #f59e0b;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --jm-bg: #f8fafc;
+  --jm-surface: #ffffff;
+  --jm-surface-2: #f1f5f9;
+  --jm-border: #e2e8f0;
+  --jm-text: #0f172a;
+  --jm-text-muted: #64748b;
+  --jm-primary: #2563eb;
+  --jm-primary-hover: #1d4ed8;
+  --jm-accent: #7c3aed;
+  --jm-success: #16a34a;
+  --jm-error: #dc2626;
+  --jm-warning: #d97706;
+  color-scheme: light;
+}
+
+/* Expose tokens as Tailwind utilities: bg-surface, text-muted, border-border, ... */
+@theme inline {
+  --color-bg: var(--jm-bg);
+  --color-surface: var(--jm-surface);
+  --color-surface-2: var(--jm-surface-2);
+  --color-border: var(--jm-border);
+  --color-fg: var(--jm-text);
+  --color-muted: var(--jm-text-muted);
+  --color-primary: var(--jm-primary);
+  --color-primary-hover: var(--jm-primary-hover);
+  --color-accent: var(--jm-accent);
+  --color-success: var(--jm-success);
+  --color-error: var(--jm-error);
+  --color-warning: var(--jm-warning);
+
+  --font-brand: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background: var(--jm-bg);
+    color: var(--jm-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *,
+  ::before,
+  ::after {
+    border-color: var(--jm-border);
+  }
+}

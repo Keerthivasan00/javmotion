@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "source": "JDI",
+  "language": "java",
+  "truncated": false,
+  "steps": [
+    {
+      "index": 0,
+      "event": "CALL",
+      "line": 3,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 3,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 1,
+      "event": "LINE",
+      "line": 4,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 4,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 2,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 3,
+      "event": "LINE",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 6,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 4,
+      "event": "LINE",
+      "line": 4,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 4,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\n"
+    },
+    {
+      "index": 5,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\n"
+    },
+    {
+      "index": 6,
+      "event": "LINE",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 6,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\n"
+    },
+    {
+      "index": 7,
+      "event": "LINE",
+      "line": 4,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 4,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\nsum = 3\n"
+    },
+    {
+      "index": 8,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\nsum = 3\n"
+    },
+    {
+      "index": 9,
+      "event": "LINE",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 6,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 6
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\nsum = 3\n"
+    },
+    {
+      "index": 10,
+      "event": "LINE",
+      "line": 4,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 4,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 6
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\nsum = 3\nsum = 6\n"
+    },
+    {
+      "index": 11,
+      "event": "LINE",
+      "line": 8,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 8,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 6
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\nsum = 3\nsum = 6\n"
+    },
+    {
+      "index": 12,
+      "event": "LINE",
+      "line": 9,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 9,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h0"
+            },
+            "sum": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 6
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h0": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": "sum = 1\nsum = 3\nsum = 6\ndone\n"
+    },
+    {
+      "index": 13,
+      "event": "END",
+      "line": 9,
+      "stack": [],
+      "heap": {},
+      "stdout": "sum = 1\nsum = 3\nsum = 6\ndone\n"
+    }
+  ]
+}
