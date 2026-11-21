@@ -4,7 +4,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Wait — frontend Step 3 comes first (Step 2 done). Then Step B0 (JDI spike).
+**Next up:** Install Docker → run `spikes/jdi-spike/docker-test.sh` (last B0 item). Then Step B2 concept visualizers (frontend Step 5 needs them).
 
 **Last updated:** 2026-11-21
 
@@ -12,11 +12,11 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 ## Step B0 — JDI Spike (risk check, do right after frontend Step 3)
 
-- [ ] Tiny standalone Java program: launch a sample `Main` via JDI `LaunchingConnector`
-- [ ] Line-step through user code, print line + local variables per step
-- [ ] Output a JSON trace matching schema §6 for a simple loop program
-- [ ] Run the same thing inside a Docker container (`eclipse-temurin:21-jdk`)
-- [ ] Note findings / problems in Progress Notes below
+- [x] Tiny standalone Java program: `spikes/jdi-spike/src/JdiSpike.java` (uses ProcessBuilder + `SocketListen`, not `LaunchingConnector` — see README finding 2)
+- [x] Line-step through user code, locals + `this` + heap BFS + CALL/RETURN (return values) + uncaught EXCEPTION + stdout per step
+- [x] Output a JSON trace matching schema §6 — 6 samples; real traces saved as `jdi-*.json` fixtures, pass frontend Zod + backend `TraceSamplesTest`
+- [~] Run the same thing inside a Docker container (`eclipse-temurin:21-jdk`). `Dockerfile` + `docker-test.sh` (full sandbox limits) written. **Left:** actually run it — Docker not installed on dev machine
+- [x] Note findings / problems — full list in `spikes/jdi-spike/README.md`
 
 ## Step B1 — Project Setup (Phase 1)
 
@@ -40,7 +40,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - [ ] `POST /api/v1/visualizer/array` (bubble sort, linear search, binary search, …)
 - [ ] `POST /api/v1/visualizer/loops` (for, while, do-while, nested)
 - [ ] Input validation + size caps
-- [~] Shared trace sample JSONs in `javmotion-common/src/test/resources/trace-samples/` (same as frontend fixtures). Files copied from frontend. **Left:** a test that deserializes them into `Trace`
+- [x] Shared trace sample JSONs in `javmotion-common/src/test/resources/trace-samples/` (same as frontend fixtures) + `TraceSamplesTest` (deserialize + round-trip)
 - [ ] Unit tests for each generator
 
 ## Step B3 — Database Setup (needed from Phase 3)
@@ -136,3 +136,5 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - 2026-11-21: Architecture docs written. Checklist created. Nothing implemented yet.
 - 2026-11-21: Boilerplate done — Step B1 complete, trace model (B2) added. `./mvnw verify` passes (5 tests). Spring Boot 4.2 (Jackson 3 = `tools.jackson.*`; annotations still `com.fasterxml.jackson.annotation`). Notes: `JAVA_HOME` points to missing `jdk-21` — use `jdk-24` or install 21. Port 8080 is taken by a local Apache `httpd` — stop it or run with `PORT=8090`.
 - 2026-11-21: Frontend fixtures copied to `trace-samples/` (for-loop, array-bubble-sort, string-reverse). No backend code changed.
+- 2026-11-21: Frontend Step 3 done. `trace-samples/` re-copied after fixture regeneration (loop headers now revisited like real JDI traces). B0 is next.
+- 2026-11-21: Step B0 spike done except the Docker run (Docker not installed). Key findings (details in `spikes/jdi-spike/README.md`): default CommandLineLaunch uses shmem on Windows and costs ~2.2 s per run → use ProcessBuilder + SocketListen (~0.25 s total); loop until VMDisconnect; drain stdout synchronously per event; stop stepping when main returns; compile with `-g`; ~2,000 steps/s; **size limit hits before step limit** (10 MB at ~3,800 steps for a 50-element array, gzip ~100×). Docker risks to check: pids-limit 64 with two JVMs, 256 MB shared. `JAVA_HOME` now points to jdk-24 (fixed).

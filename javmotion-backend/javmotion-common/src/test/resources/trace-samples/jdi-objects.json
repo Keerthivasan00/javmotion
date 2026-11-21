@@ -1,0 +1,1187 @@
+{
+  "schemaVersion": 1,
+  "source": "JDI",
+  "language": "java",
+  "truncated": false,
+  "steps": [
+    {
+      "index": 0,
+      "event": "CALL",
+      "line": 12,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 12,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 1,
+      "event": "CALL",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 12,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            }
+          }
+        },
+        {
+          "id": "f2",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 6,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 2,
+      "event": "LINE",
+      "line": 7,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 12,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            }
+          }
+        },
+        {
+          "id": "f2",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 7,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 3,
+      "event": "LINE",
+      "line": 8,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 12,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            }
+          }
+        },
+        {
+          "id": "f2",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 8,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 4,
+      "event": "RETURN",
+      "line": 8,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 12,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            }
+          }
+        },
+        {
+          "id": "f2",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 8,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 5,
+      "event": "LINE",
+      "line": 12,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 12,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 6,
+      "event": "LINE",
+      "line": 13,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 13,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 7,
+      "event": "CALL",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 13,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        },
+        {
+          "id": "f3",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 6,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h59"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 8,
+      "event": "LINE",
+      "line": 7,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 13,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        },
+        {
+          "id": "f3",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 7,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h59"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 9,
+      "event": "LINE",
+      "line": 8,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 13,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        },
+        {
+          "id": "f3",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 8,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h59"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 10,
+      "event": "RETURN",
+      "line": 8,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 13,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        },
+        {
+          "id": "f3",
+          "method": "<init>",
+          "className": "Main$Node",
+          "line": 8,
+          "locals": {
+            "this": {
+              "kind": "REF",
+              "ref": "h59"
+            },
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 11,
+      "event": "LINE",
+      "line": 13,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 13,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 12,
+      "event": "LINE",
+      "line": 14,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 14,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "NULL"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 13,
+      "event": "LINE",
+      "line": 15,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 15,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 14,
+      "event": "LINE",
+      "line": 16,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 16,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "boxed": {
+              "kind": "REF",
+              "ref": "h60"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        },
+        "h60": {
+          "kind": "OBJECT",
+          "type": "java.lang.Integer",
+          "fields": {}
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 15,
+      "event": "LINE",
+      "line": 17,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 17,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "boxed": {
+              "kind": "REF",
+              "ref": "h60"
+            },
+            "ratio": {
+              "kind": "PRIMITIVE",
+              "type": "double",
+              "value": "NaN"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        },
+        "h60": {
+          "kind": "OBJECT",
+          "type": "java.lang.Integer",
+          "fields": {}
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 16,
+      "event": "LINE",
+      "line": 18,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 18,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "boxed": {
+              "kind": "REF",
+              "ref": "h60"
+            },
+            "ratio": {
+              "kind": "PRIMITIVE",
+              "type": "double",
+              "value": "NaN"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        },
+        "h60": {
+          "kind": "OBJECT",
+          "type": "java.lang.Integer",
+          "fields": {}
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      },
+      "stdout": "no newline"
+    },
+    {
+      "index": 17,
+      "event": "LINE",
+      "line": 19,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 19,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "boxed": {
+              "kind": "REF",
+              "ref": "h60"
+            },
+            "ratio": {
+              "kind": "PRIMITIVE",
+              "type": "double",
+              "value": "NaN"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        },
+        "h60": {
+          "kind": "OBJECT",
+          "type": "java.lang.Integer",
+          "fields": {}
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      },
+      "stdout": "no newline2\n"
+    },
+    {
+      "index": 18,
+      "event": "RETURN",
+      "line": 19,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 19,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "head": {
+              "kind": "REF",
+              "ref": "h58"
+            },
+            "boxed": {
+              "kind": "REF",
+              "ref": "h60"
+            },
+            "ratio": {
+              "kind": "PRIMITIVE",
+              "type": "double",
+              "value": "NaN"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h58": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        },
+        "h60": {
+          "kind": "OBJECT",
+          "type": "java.lang.Integer",
+          "fields": {}
+        },
+        "h59": {
+          "kind": "OBJECT",
+          "type": "Main$Node",
+          "fields": {
+            "value": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            },
+            "next": {
+              "kind": "REF",
+              "ref": "h58"
+            }
+          }
+        }
+      },
+      "stdout": "no newline2\n"
+    },
+    {
+      "index": 19,
+      "event": "END",
+      "line": 19,
+      "stack": [],
+      "heap": {},
+      "stdout": "no newline2\n"
+    }
+  ]
+}

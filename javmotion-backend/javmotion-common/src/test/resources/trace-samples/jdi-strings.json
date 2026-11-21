@@ -1,0 +1,2622 @@
+{
+  "schemaVersion": 1,
+  "source": "JDI",
+  "language": "java",
+  "truncated": false,
+  "steps": [
+    {
+      "index": 0,
+      "event": "CALL",
+      "line": 3,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 3,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 1,
+      "event": "LINE",
+      "line": 4,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 4,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 2,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h59"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h59": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": ""
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 3,
+      "event": "LINE",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 6,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h59"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h59": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": ""
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 4,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h256"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 3
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h256": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "e"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 5,
+      "event": "LINE",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 6,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h256"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h256": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "e"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 6,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h257"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 2
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h257": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "ed"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 7,
+      "event": "LINE",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 6,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h257"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h257": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "ed"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 8,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h258"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h258": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edo"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 9,
+      "event": "LINE",
+      "line": 6,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 6,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h258"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h258": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edo"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 10,
+      "event": "LINE",
+      "line": 5,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 5,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "i": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 11,
+      "event": "LINE",
+      "line": 8,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 8,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 12,
+      "event": "LINE",
+      "line": 9,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 9,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "arr": {
+              "kind": "REF",
+              "ref": "h260"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        },
+        "h260": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 4
+            }
+          ]
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 13,
+      "event": "LINE",
+      "line": 10,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 10,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "arr": {
+              "kind": "REF",
+              "ref": "h260"
+            },
+            "tmp": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        },
+        "h260": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 4
+            }
+          ]
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 14,
+      "event": "LINE",
+      "line": 11,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 11,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "arr": {
+              "kind": "REF",
+              "ref": "h260"
+            },
+            "tmp": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        },
+        "h260": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 4
+            }
+          ]
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 15,
+      "event": "LINE",
+      "line": 12,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 12,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "arr": {
+              "kind": "REF",
+              "ref": "h260"
+            },
+            "tmp": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        },
+        "h260": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 4
+            }
+          ]
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 16,
+      "event": "LINE",
+      "line": 13,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 13,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "arr": {
+              "kind": "REF",
+              "ref": "h260"
+            },
+            "tmp": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            "big": {
+              "kind": "REF",
+              "ref": "h262"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        },
+        "h260": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 4
+            }
+          ]
+        },
+        "h262": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            }
+          ],
+          "length": 150
+        }
+      },
+      "stdout": ""
+    },
+    {
+      "index": 17,
+      "event": "LINE",
+      "line": 14,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 14,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "arr": {
+              "kind": "REF",
+              "ref": "h260"
+            },
+            "tmp": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            "big": {
+              "kind": "REF",
+              "ref": "h262"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        },
+        "h260": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 4
+            }
+          ]
+        },
+        "h262": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            }
+          ],
+          "length": 150
+        }
+      },
+      "stdout": "edoc 1 150\n"
+    },
+    {
+      "index": 18,
+      "event": "RETURN",
+      "line": 14,
+      "stack": [
+        {
+          "id": "f1",
+          "method": "main",
+          "className": "Main",
+          "line": 14,
+          "locals": {
+            "args": {
+              "kind": "REF",
+              "ref": "h55"
+            },
+            "s": {
+              "kind": "REF",
+              "ref": "h57"
+            },
+            "rev": {
+              "kind": "REF",
+              "ref": "h259"
+            },
+            "arr": {
+              "kind": "REF",
+              "ref": "h260"
+            },
+            "tmp": {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            "big": {
+              "kind": "REF",
+              "ref": "h262"
+            }
+          }
+        }
+      ],
+      "heap": {
+        "h55": {
+          "kind": "ARRAY",
+          "type": "java.lang.String[]",
+          "elements": []
+        },
+        "h57": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "code"
+        },
+        "h259": {
+          "kind": "STRING",
+          "type": "java.lang.String",
+          "value": "edoc"
+        },
+        "h260": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 5
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 4
+            }
+          ]
+        },
+        "h262": {
+          "kind": "ARRAY",
+          "type": "int[]",
+          "elements": [
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "kind": "PRIMITIVE",
+              "type": "int",
+              "value": 0
+            }
+          ],
+          "length": 150
+        }
+      },
+      "stdout": "edoc 1 150\n"
+    },
+    {
+      "index": 19,
+      "event": "END",
+      "line": 14,
+      "stack": [],
+      "heap": {},
+      "stdout": "edoc 1 150\n"
+    }
+  ]
+}
