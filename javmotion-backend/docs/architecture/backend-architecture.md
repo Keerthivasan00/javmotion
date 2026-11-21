@@ -128,10 +128,13 @@ Trade-off: no stdin interaction during visualize, and step cap applies (see §6.
 
 ```java
 public interface ConceptVisualizer<I> {
-    String key();                 // "string-reverse", "array", "loops"
-    Trace generate(I input);      // validated, size-limited input
+    String key();                         // "string-reverse", "array", "loops"
+    ConceptResult generate(I input);      // validated, size-limited input
+    record ConceptResult(String key, String title, String code, Trace trace) {}
 }
 ```
+
+`code` is the Java program the trace's line numbers refer to, so the frontend can show it in the editor and read loop headers. Generators use `ConceptTraceBuilder`, which follows JDI step semantics (step recorded before its line runs; loop headers revisited after each iteration with the old loop variable; first step `CALL`, last `END`). That is why the frontend visualizers work on both trace sources unchanged.
 
 ---
 
@@ -357,11 +360,13 @@ Compile errors are parsed from javac output into structured items so the editor 
 
 | Method | Path | Body |
 |---|---|---|
-| POST | `/visualizer/string-reverse` | `{ "input": "hello" }` |
-| POST | `/visualizer/array` | `{ "operation": "BUBBLE_SORT"\|"LINEAR_SEARCH"\|"BINARY_SEARCH"\|..., "values": [..], "target"?: n }` |
-| POST | `/visualizer/loops` | `{ "type": "FOR"\|"WHILE"\|"DO_WHILE"\|"NESTED", "start", "end", "step" }` |
+| POST | `/visualizer/string-reverse` | `{ "input": "hello" }` — 1–20 printable ASCII chars |
+| POST | `/visualizer/array` | `{ "operation": "BUBBLE_SORT"\|"SELECTION_SORT"\|"LINEAR_SEARCH"\|"BINARY_SEARCH", "values": [..], "target"?: n }` — 1–12 values in −999..999; `target` required for searches; binary search needs ascending values |
+| POST | `/visualizer/loops` | `{ "type": "FOR"\|"WHILE"\|"DO_WHILE"\|"NESTED", "start", "end", "step"? }` — start/end in −100..100, step 1–10 (default 1), counts down when start > end; max 20 iterations (6 outer for NESTED) |
 
-All return a `Trace` synchronously (pure computation, sub-millisecond, input size-capped).
+All return `{ key, title, code, trace }` synchronously (pure computation, sub-millisecond, input size-capped).
+
+Error codes: `VALIDATION_FAILED` (with `errors` per field), `MALFORMED_REQUEST` (bad JSON / unknown enum), `TARGET_REQUIRED`, `ARRAY_NOT_SORTED`, `TOO_MANY_ITERATIONS`.
 
 ### 7.3 Programs
 

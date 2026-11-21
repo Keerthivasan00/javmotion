@@ -4,7 +4,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Install Docker → run `spikes/jdi-spike/docker-test.sh` (last B0 item). Then Step B2 concept visualizers (frontend Step 5 needs them).
+**Next up:** Frontend Step 5 (connect Concepts page to these endpoints). Backend: Step B3 (DB) when starting Phase 3. Still pending: run `spikes/jdi-spike/docker-test.sh` once Docker is installed.
 
 **Last updated:** 2026-11-21
 
@@ -35,13 +35,13 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 ## Step B2 — Concept Visualizers (Phase 2)
 
 - [x] Trace model in `javmotion-common/trace`: `Trace`, `TraceStep`, `Frame`, `Value`, `HeapObject`, `EventType`, `Highlight` (+ `TraceJsonTest`)
-- [ ] `ConceptVisualizer<I>` interface
-- [ ] `POST /api/v1/visualizer/string-reverse`
-- [ ] `POST /api/v1/visualizer/array` (bubble sort, linear search, binary search, …)
-- [ ] `POST /api/v1/visualizer/loops` (for, while, do-while, nested)
-- [ ] Input validation + size caps
+- [x] `ConceptVisualizer<I>` interface — returns `ConceptResult { key, title, code, trace }` (code needed by frontend; doc §3.2/§7.2 updated). Shared `ConceptTraceBuilder` follows JDI step semantics
+- [x] `POST /api/v1/visualizer/string-reverse`
+- [x] `POST /api/v1/visualizer/array` (bubble sort, selection sort, linear search, binary search)
+- [x] `POST /api/v1/visualizer/loops` (for, while, do-while, nested; counts down when start > end)
+- [x] Input validation + size caps (Bean Validation + `TARGET_REQUIRED`, `ARRAY_NOT_SORTED`, `TOO_MANY_ITERATIONS`; `MALFORMED_REQUEST` for bad JSON/enum)
 - [x] Shared trace sample JSONs in `javmotion-common/src/test/resources/trace-samples/` (same as frontend fixtures) + `TraceSamplesTest` (deserialize + round-trip)
-- [ ] Unit tests for each generator
+- [x] Unit tests for each generator (`ConceptVisualizersTest` incl. random-input well-formedness, `VisualizerControllerTest`)
 
 ## Step B3 — Database Setup (needed from Phase 3)
 
@@ -138,3 +138,4 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - 2026-11-21: Frontend fixtures copied to `trace-samples/` (for-loop, array-bubble-sort, string-reverse). No backend code changed.
 - 2026-11-21: Frontend Step 3 done. `trace-samples/` re-copied after fixture regeneration (loop headers now revisited like real JDI traces). B0 is next.
 - 2026-11-21: Step B0 spike done except the Docker run (Docker not installed). Key findings (details in `spikes/jdi-spike/README.md`): default CommandLineLaunch uses shmem on Windows and costs ~2.2 s per run → use ProcessBuilder + SocketListen (~0.25 s total); loop until VMDisconnect; drain stdout synchronously per event; stop stepping when main returns; compile with `-g`; ~2,000 steps/s; **size limit hits before step limit** (10 MB at ~3,800 steps for a 50-element array, gzip ~100×). Docker risks to check: pids-limit 64 with two JVMs, 256 MB shared. `JAVA_HOME` now points to jdk-24 (fixed).
+- 2026-11-21: Step B2 complete. 3 concept endpoints, 8 operations. Every trace checked by `ConceptTraceAssertions` (lines point at real code, refs exist, highlight indexes in range, stdout only grows). 59 tests pass (`mvnw verify`). Real responses recorded into frontend `src/test/fixtures/concepts/` and validated there with Zod + loop detection.

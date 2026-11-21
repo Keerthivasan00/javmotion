@@ -4,7 +4,7 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Step 5 (connect Concepts page) — needs backend Step B2 endpoints first.
+**Next up:** Step 5 (connect Concepts page) — backend B2 endpoints are ready; response is `{ key, title, code, trace }`, sample responses in `src/test/fixtures/concepts/`.
 
 **Last updated:** 2026-11-21
 
@@ -146,3 +146,4 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 - 2026-11-21: Step 1b + Step 2 complete. Format button (`formatJava.ts`, brace-depth re-indent), pane sizes persisted, Zod `parseTrace`, 3 fixtures (copied to backend trace-samples), playback feature (`features/playback/`: store, selectors, ticker, shortcuts, controls, demo traces). Console stdout-by-step done early (Step 3 item). 29 tests pass; build, lint, prettier clean.
 - 2026-11-21: Step 3 complete. Visualizers in `features/visualizers/` (registry, Variables, Array, String, Loop, Call Stack), temporary `StepSummary` removed. Fixtures regenerated with realistic loop-header revisits (bubble sort now 26 steps, string reverse 13); backend `trace-samples/` re-copied. Empty `main` args hidden from Array tab. 48 tests pass; build, lint, prettier clean. Note: framer-motion grew the lazy Playground chunk 53 → 106 KB gzip (initial bundle unchanged); `LazyMotion` can trim it later.
 - 2026-11-21: Added real JDI traces from the backend spike as fixtures (`jdi-*.json`) + `jdiFixtures.test.ts`: schema, loop detection, registry all work on real tracer output. 57 tests pass.
+- 2026-11-21: Recorded real backend concept responses into `src/test/fixtures/concepts/` + `conceptFixtures.test.ts` (schema, lines→code, default tab, loop detection). 69 tests pass.

@@ -1,0 +1,545 @@
+{
+  "key": "string-reverse",
+  "title": "Reverse \"code\"",
+  "code": "public class StringReverse {\n    public static void main(String[] args) {\n        String s = \"code\";\n        String rev = \"\";\n        for (int i = s.length() - 1; i >= 0; i--) {\n            rev = rev + s.charAt(i);\n        }\n        System.out.println(rev);\n    }\n}\n",
+  "trace": {
+    "schemaVersion": 1,
+    "source": "CONCEPT",
+    "language": "java",
+    "truncated": false,
+    "steps": [
+      {
+        "index": 0,
+        "event": "CALL",
+        "line": 3,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 3,
+            "locals": {}
+          }
+        ],
+        "heap": {},
+        "stdout": ""
+      },
+      {
+        "index": 1,
+        "event": "LINE",
+        "line": 4,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 4,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          }
+        },
+        "stdout": ""
+      },
+      {
+        "index": 2,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 5,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h2"
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h2": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": ""
+          }
+        },
+        "stdout": ""
+      },
+      {
+        "index": 3,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 6,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h2"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h2": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": ""
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "active",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 5,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h3"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h3": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "e"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "pointer",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 6,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h3"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h3": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "e"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "active",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 5,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h4"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h4": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "ed"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "pointer",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 6,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h4"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h4": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "ed"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "active",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 5,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h5"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h5": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "edo"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 6,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h5"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h5": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "edo"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "active",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 5,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h6"
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h6": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "edoc"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "i"
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "event": "LINE",
+        "line": 8,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "StringReverse",
+            "line": 8,
+            "locals": {
+              "s": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "rev": {
+                "kind": "REF",
+                "ref": "h6"
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h6": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "edoc"
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h6",
+            "role": "found"
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "event": "END",
+        "line": 8,
+        "stack": [],
+        "heap": {
+          "h1": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "code"
+          },
+          "h6": {
+            "kind": "STRING",
+            "type": "java.lang.String",
+            "value": "edoc"
+          }
+        },
+        "stdout": "edoc\n"
+      }
+    ]
+  }
+}

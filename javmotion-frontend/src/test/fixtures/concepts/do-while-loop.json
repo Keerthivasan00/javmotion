@@ -1,0 +1,257 @@
+{
+  "key": "loops",
+  "title": "do-while loop",
+  "code": "public class DoWhileLoop {\n    public static void main(String[] args) {\n        int i = 1;\n        do {\n            System.out.println(\"i = \" + i);\n            i++;\n        } while (i <= 3);\n        System.out.println(\"done\");\n    }\n}\n",
+  "trace": {
+    "schemaVersion": 1,
+    "source": "CONCEPT",
+    "language": "java",
+    "truncated": false,
+    "steps": [
+      {
+        "index": 0,
+        "event": "CALL",
+        "line": 3,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 3,
+            "locals": {}
+          }
+        ],
+        "heap": {},
+        "stdout": ""
+      },
+      {
+        "index": 1,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 5,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": ""
+      },
+      {
+        "index": 2,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 6,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\n"
+      },
+      {
+        "index": 3,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 7,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\n"
+      },
+      {
+        "index": 4,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 5,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\n"
+      },
+      {
+        "index": 5,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 6,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\ni = 2\n"
+      },
+      {
+        "index": 6,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 7,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\ni = 2\n"
+      },
+      {
+        "index": 7,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 5,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\ni = 2\n"
+      },
+      {
+        "index": 8,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 6,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\ni = 2\ni = 3\n"
+      },
+      {
+        "index": 9,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 7,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\ni = 2\ni = 3\n"
+      },
+      {
+        "index": 10,
+        "event": "LINE",
+        "line": 8,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "DoWhileLoop",
+            "line": 8,
+            "locals": {
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              }
+            }
+          }
+        ],
+        "heap": {},
+        "stdout": "i = 1\ni = 2\ni = 3\n"
+      },
+      {
+        "index": 11,
+        "event": "END",
+        "line": 8,
+        "stack": [],
+        "heap": {},
+        "stdout": "i = 1\ni = 2\ni = 3\ndone\n"
+      }
+    ]
+  }
+}

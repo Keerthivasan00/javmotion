@@ -1,0 +1,2622 @@
+{
+  "key": "array",
+  "title": "Bubble sort",
+  "code": "public class BubbleSort {\n    public static void main(String[] args) {\n        int[] arr = {5, 1, 4, 2};\n        int n = arr.length;\n        for (int i = 0; i < n - 1; i++) {\n            for (int j = 0; j < n - 1 - i; j++) {\n                if (arr[j] > arr[j + 1]) {\n                    int temp = arr[j];\n                    arr[j] = arr[j + 1];\n                    arr[j + 1] = temp;\n                }\n            }\n        }\n        System.out.println(java.util.Arrays.toString(arr));\n    }\n}\n",
+  "trace": {
+    "schemaVersion": 1,
+    "source": "CONCEPT",
+    "language": "java",
+    "truncated": false,
+    "steps": [
+      {
+        "index": 0,
+        "event": "CALL",
+        "line": 3,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 3,
+            "locals": {}
+          }
+        ],
+        "heap": {},
+        "stdout": ""
+      },
+      {
+        "index": 1,
+        "event": "LINE",
+        "line": 4,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 4,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": ""
+      },
+      {
+        "index": 2,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 5,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": ""
+      },
+      {
+        "index": 3,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": ""
+      },
+      {
+        "index": 4,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 7,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "event": "LINE",
+        "line": 8,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 8,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "event": "LINE",
+        "line": 9,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 9,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "event": "LINE",
+        "line": 10,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 10,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 7,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "event": "LINE",
+        "line": 8,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 8,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "event": "LINE",
+        "line": 9,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 9,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "event": "LINE",
+        "line": 10,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 10,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 7,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "event": "LINE",
+        "line": 8,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 8,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "event": "LINE",
+        "line": 9,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 9,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 17,
+        "event": "LINE",
+        "line": 10,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 10,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 18,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 19,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 5,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          }
+        ]
+      },
+      {
+        "index": 20,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          }
+        ]
+      },
+      {
+        "index": 21,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 7,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 22,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 23,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 7,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 24,
+        "event": "LINE",
+        "line": 8,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 8,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 25,
+        "event": "LINE",
+        "line": 9,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 9,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 26,
+        "event": "LINE",
+        "line": 10,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 10,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "temp": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "swap"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 27,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 28,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 5,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "found"
+          }
+        ]
+      },
+      {
+        "index": 29,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "found"
+          }
+        ]
+      },
+      {
+        "index": 30,
+        "event": "LINE",
+        "line": 7,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 7,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "compare"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 31,
+        "event": "LINE",
+        "line": 6,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 6,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              "j": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 0
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "pointer",
+            "label": "j"
+          }
+        ]
+      },
+      {
+        "index": 32,
+        "event": "LINE",
+        "line": 5,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 5,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              "i": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "found"
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "event": "LINE",
+        "line": 14,
+        "stack": [
+          {
+            "id": "f1",
+            "method": "main",
+            "className": "BubbleSort",
+            "line": 14,
+            "locals": {
+              "arr": {
+                "kind": "REF",
+                "ref": "h1"
+              },
+              "n": {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              }
+            }
+          }
+        ],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "",
+        "highlights": [
+          {
+            "ref": "h1",
+            "index": 0,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 1,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 2,
+            "role": "found"
+          },
+          {
+            "ref": "h1",
+            "index": 3,
+            "role": "found"
+          }
+        ]
+      },
+      {
+        "index": 34,
+        "event": "END",
+        "line": 14,
+        "stack": [],
+        "heap": {
+          "h1": {
+            "kind": "ARRAY",
+            "type": "int[]",
+            "elements": [
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 1
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 2
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 4
+              },
+              {
+                "kind": "PRIMITIVE",
+                "type": "int",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "stdout": "[1, 2, 4, 5]\n"
+      }
+    ]
+  }
+}
