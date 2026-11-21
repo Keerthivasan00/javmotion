@@ -4,7 +4,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Step B3 (MySQL + Flyway; needs Docker for `docker-compose` and Testcontainers). Still pending: run `spikes/jdi-spike/docker-test.sh` once Docker is installed. (Frontend Step 5 done — Concepts page uses B2.)
+**Next up:** Run `scripts/create-local-db.sql` on the local MySQL (port 3300), then run `ExecutionPersistenceLocalMySqlTest` + start the API to verify Flyway/validate. Then B4: workspace + process runner + `POST /internal/jobs`, API `POST /executions`. Docker still needed for the sandbox itself.
 
 **Last updated:** 2026-11-21
 
@@ -45,28 +45,28 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 ## Step B3 — Database Setup (needed from Phase 3)
 
-- [ ] Add Spring Data JPA, MySQL driver, Flyway
-- [ ] `docker-compose.yml` with MySQL 8
-- [ ] `V1__init.sql`: `executions`, `execution_traces`
-- [ ] `ddl-auto=validate`
-- [ ] Testcontainers MySQL test setup
+- [x] Add Spring Data JPA, MySQL driver, Flyway (`spring-boot-starter-flyway` + `flyway-mysql`)
+- [x] `docker-compose.yml` with MySQL 8 (written, not run — no Docker). Local alternative: `scripts/create-local-db.sql`
+- [x] `V1__init.sql`: `executions`, `execution_traces` (+ `Execution` entity with status machine, `ExecutionTrace`, repositories)
+- [~] `ddl-auto=validate` set; entities spell out MySQL column types. **Left:** confirm against a real MySQL (not run yet)
+- [~] Testcontainers MySQL test setup (`ExecutionPersistenceTestcontainersTest`, skips without Docker) + `ExecutionPersistenceLocalMySqlTest` (runs when `DB_URL` set). **Left:** run either one. Controller tests moved to `@WebMvcTest` so they need no DB
 
 ## Step B4 — Worker + Sandbox + Compiler (Phase 3)
 
-- [ ] `docker/sandbox.Dockerfile` (temurin 21 JDK, non-root user, `run.sh`)
+- [~] `docker/sandbox.Dockerfile` (temurin 21 JDK, non-root user, `run.sh`) written. **Left:** build + run (needs Docker and the real tracer jar)
 - [ ] `javmotion-worker` Spring Boot app, `POST /internal/jobs` with `X-Worker-Token`
 - [ ] Workspace create/cleanup (`src` ro, `out` rw, delete in `finally`)
-- [ ] `DockerCommandBuilder` with all limits (network none, memory, cpus, pids, read-only, cap-drop, non-root)
+- [x] `DockerCommandBuilder` with all limits (network none, memory, cpus, pids, read-only, cap-drop, non-root) + `WorkerProperties`
 - [ ] Wall-clock timeout + `docker kill`
 - [ ] Concurrency limit (bounded pool, 429 when full)
-- [ ] Output truncation (64 KB)
+- [x] Output truncation (64 KB) — `BoundedOutput` (UTF-8 safe cut). **Not wired** to a process runner yet
 - [ ] Orphan container sweeper
-- [ ] Entry class detection (`public class X` with `main`)
+- [x] Entry class detection (`public class X` with `main`) — `common/job/EntryClassDetector`
 - [ ] API: `POST /api/v1/executions` (RUN mode) → 202 `{ id, accessToken }`
 - [ ] API: `ExecutionDispatcher` (@Async) + `WorkerClient` (RestClient)
 - [ ] API: `GET /executions/{id}`, `/output`, `DELETE /executions/{id}`
-- [ ] Status machine (QUEUED → RUNNING → COMPLETED / COMPILE_ERROR / RUNTIME_ERROR / TIMEOUT / LIMIT_EXCEEDED / FAILED / CANCELLED)
-- [ ] javac error parser → `compileErrors[{line, column, message}]`
+- [x] Status machine (QUEUED → RUNNING → COMPLETED / COMPILE_ERROR / RUNTIME_ERROR / TIMEOUT / LIMIT_EXCEEDED / FAILED / CANCELLED) — transitions on the `Execution` entity
+- [x] javac error parser → `compileErrors[{line, column, message}]` — `common/job/JavacErrorParser` (tested against real javac output)
 - [ ] Per-execution access token (anonymous access control)
 - [ ] Source size limit (64 KB), request size limit (128 KB)
 - [ ] Rate limiting (Bucket4j)
@@ -139,3 +139,4 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - 2026-11-21: Frontend Step 3 done. `trace-samples/` re-copied after fixture regeneration (loop headers now revisited like real JDI traces). B0 is next.
 - 2026-11-21: Step B0 spike done except the Docker run (Docker not installed). Key findings (details in `spikes/jdi-spike/README.md`): default CommandLineLaunch uses shmem on Windows and costs ~2.2 s per run → use ProcessBuilder + SocketListen (~0.25 s total); loop until VMDisconnect; drain stdout synchronously per event; stop stepping when main returns; compile with `-g`; ~2,000 steps/s; **size limit hits before step limit** (10 MB at ~3,800 steps for a 50-element array, gzip ~100×). Docker risks to check: pids-limit 64 with two JVMs, 256 MB shared. `JAVA_HOME` now points to jdk-24 (fixed).
 - 2026-11-21: Step B2 complete. 3 concept endpoints, 8 operations. Every trace checked by `ConceptTraceAssertions` (lines point at real code, refs exist, highlight indexes in range, stdout only grows). 59 tests pass (`mvnw verify`). Real responses recorded into frontend `src/test/fixtures/concepts/` and validated there with Zod + loop detection.
+- 2026-11-21: Step B3 code done using the local MySQL path (no Docker): deps, V1 migration, entities, repositories, compose file, local DB script. Not yet run against MySQL — waiting for `create-local-db.sql` (local MySQL listens on **3300**). B4 Docker-free pieces: EntryClassDetector, JavacErrorParser, DockerCommandBuilder, BoundedOutput, sandbox Dockerfile + run.sh. 106 tests pass, 4 DB tests skipped. Note: the API now needs MySQL to start (concept endpoints included).

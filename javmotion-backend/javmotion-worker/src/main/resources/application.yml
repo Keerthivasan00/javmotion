@@ -10,6 +10,16 @@ worker:
   sandbox-image: ${SANDBOX_IMAGE:javmotion-sandbox:21}
   max-concurrent: ${SANDBOX_MAX_CONCURRENT:4}
   jobs-dir: ${JOBS_DIR:./.jobs}
+  # Container limits — backend doc §5.2. pids-limit 64 may be too low for tracer + debuggee
+  # (two JVMs); re-check with spikes/jdi-spike/docker-test.sh before raising.
+  limits:
+    memory: 256m
+    cpus: "1"
+    pids: 64
+    tmpfs-size: 16m
+    run-timeout: 5s
+    visualize-timeout: 10s
+    max-output-bytes: 65536
 
 management:
   endpoints:
