@@ -4,7 +4,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Run `scripts/create-local-db.sql` on the local MySQL (port 3300), then run `ExecutionPersistenceLocalMySqlTest` + start the API to verify Flyway/validate. Then B4: workspace + process runner + `POST /internal/jobs`, API `POST /executions`. Docker still needed for the sandbox itself.
+**Next up:** B4: workspace + process runner + `POST /internal/jobs` (worker), API `POST /executions` + dispatcher. Docker still needed for the sandbox itself. Local DB: MySQL80 on port **3300**, db/user `javmotion` (start the API with `DB_URL=jdbc:mysql://localhost:3300/javmotion`).
 
 **Last updated:** 2026-11-21
 
@@ -48,8 +48,8 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - [x] Add Spring Data JPA, MySQL driver, Flyway (`spring-boot-starter-flyway` + `flyway-mysql`)
 - [x] `docker-compose.yml` with MySQL 8 (written, not run — no Docker). Local alternative: `scripts/create-local-db.sql`
 - [x] `V1__init.sql`: `executions`, `execution_traces` (+ `Execution` entity with status machine, `ExecutionTrace`, repositories)
-- [~] `ddl-auto=validate` set; entities spell out MySQL column types. **Left:** confirm against a real MySQL (not run yet)
-- [~] Testcontainers MySQL test setup (`ExecutionPersistenceTestcontainersTest`, skips without Docker) + `ExecutionPersistenceLocalMySqlTest` (runs when `DB_URL` set). **Left:** run either one. Controller tests moved to `@WebMvcTest` so they need no DB
+- [x] `ddl-auto=validate` — verified against local MySQL 8.0.37 (Flyway applied V1, Hibernate validation passed, API starts)
+- [~] Testcontainers MySQL test setup (`ExecutionPersistenceTestcontainersTest`, skips without Docker) + `ExecutionPersistenceLocalMySqlTest` (runs when `DB_URL` set — **passes** on local MySQL). **Left:** run the Testcontainers variant once Docker exists. Controller tests moved to `@WebMvcTest` so they need no DB
 
 ## Step B4 — Worker + Sandbox + Compiler (Phase 3)
 
@@ -140,3 +140,4 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - 2026-11-21: Step B0 spike done except the Docker run (Docker not installed). Key findings (details in `spikes/jdi-spike/README.md`): default CommandLineLaunch uses shmem on Windows and costs ~2.2 s per run → use ProcessBuilder + SocketListen (~0.25 s total); loop until VMDisconnect; drain stdout synchronously per event; stop stepping when main returns; compile with `-g`; ~2,000 steps/s; **size limit hits before step limit** (10 MB at ~3,800 steps for a 50-element array, gzip ~100×). Docker risks to check: pids-limit 64 with two JVMs, 256 MB shared. `JAVA_HOME` now points to jdk-24 (fixed).
 - 2026-11-21: Step B2 complete. 3 concept endpoints, 8 operations. Every trace checked by `ConceptTraceAssertions` (lines point at real code, refs exist, highlight indexes in range, stdout only grows). 59 tests pass (`mvnw verify`). Real responses recorded into frontend `src/test/fixtures/concepts/` and validated there with Zod + loop detection.
 - 2026-11-21: Step B3 code done using the local MySQL path (no Docker): deps, V1 migration, entities, repositories, compose file, local DB script. Not yet run against MySQL — waiting for `create-local-db.sql` (local MySQL listens on **3300**). B4 Docker-free pieces: EntryClassDetector, JavacErrorParser, DockerCommandBuilder, BoundedOutput, sandbox Dockerfile + run.sh. 106 tests pass, 4 DB tests skipped. Note: the API now needs MySQL to start (concept endpoints included).
+- 2026-11-23: Local MySQL set up (service had stopped after a reboot; port 3300). V1 migration applied, schema validation passes, persistence tests pass, API starts and serves concept endpoints. Found and fixed: Boot 4 `@DataJpaTest` did not roll back, so test rows were committed — contract class is now `@Transactional` (leftover rows deleted).

@@ -9,11 +9,16 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Persistence checks shared by the Testcontainers and local-MySQL variants. Starting the
  * context at all proves Flyway ran V1 and Hibernate's {@code ddl-auto=validate} accepted it.
+ *
+ * <p>Explicitly {@code @Transactional} so every test rolls back: in Spring Boot 4,
+ * {@code @DataJpaTest} alone did not, and rows were committed to the local database.
  */
+@Transactional
 abstract class ExecutionPersistenceContract {
 
     @Autowired
