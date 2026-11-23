@@ -10,6 +10,8 @@ worker:
   sandbox-image: ${SANDBOX_IMAGE:javmotion-sandbox:21}
   max-concurrent: ${SANDBOX_MAX_CONCURRENT:4}
   jobs-dir: ${JOBS_DIR:./.jobs}
+  # docker (default, real sandbox) | host (DEV ONLY: runs code on this machine without isolation)
+  runner: ${WORKER_RUNNER:docker}
   # Container limits — backend doc §5.2. pids-limit 64 may be too low for tracer + debuggee
   # (two JVMs); re-check with spikes/jdi-spike/docker-test.sh before raising.
   limits:

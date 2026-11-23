@@ -4,7 +4,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** B4: workspace + process runner + `POST /internal/jobs` (worker), API `POST /executions` + dispatcher. Docker still needed for the sandbox itself. Local DB: MySQL80 on port **3300**, db/user `javmotion` (start the API with `DB_URL=jdbc:mysql://localhost:3300/javmotion`).
+**Next up:** Frontend Step 6 (Run button → `POST /executions` + polling, compile errors as Monaco markers). Backend leftovers in B4: rate limiting (Bucket4j), request size limit, orphan container sweeper, Docker runner + security tests (need Docker). Local dev: MySQL80 on port **3300**; worker with `WORKER_RUNNER=host` (no sandbox!).
 
 **Last updated:** 2026-11-21
 
@@ -54,23 +54,24 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 ## Step B4 — Worker + Sandbox + Compiler (Phase 3)
 
 - [~] `docker/sandbox.Dockerfile` (temurin 21 JDK, non-root user, `run.sh`) written. **Left:** build + run (needs Docker and the real tracer jar)
-- [ ] `javmotion-worker` Spring Boot app, `POST /internal/jobs` with `X-Worker-Token`
-- [ ] Workspace create/cleanup (`src` ro, `out` rw, delete in `finally`)
+- [x] `javmotion-worker` Spring Boot app, `POST /internal/jobs` with `X-Worker-Token` (constant-time compare, 401 otherwise)
+- [x] Workspace create/cleanup (`src` ro, `out` rw, delete on close) — `Workspace`
 - [x] `DockerCommandBuilder` with all limits (network none, memory, cpus, pids, read-only, cap-drop, non-root) + `WorkerProperties`
-- [ ] Wall-clock timeout + `docker kill`
-- [ ] Concurrency limit (bounded pool, 429 when full)
-- [x] Output truncation (64 KB) — `BoundedOutput` (UTF-8 safe cut). **Not wired** to a process runner yet
+- [x] Wall-clock timeout + `docker kill` — `ProcessRunner` (+ force-kill of the process tree); timeout verified with the host runner
+- [x] Concurrency limit (semaphore, 429 when full; API retries 3×)
+- [x] Output truncation (64 KB) — `BoundedOutput` (UTF-8 safe cut), wired into `ProcessRunner`; over the limit → `LIMIT_EXCEEDED`
 - [ ] Orphan container sweeper
 - [x] Entry class detection (`public class X` with `main`) — `common/job/EntryClassDetector`
-- [ ] API: `POST /api/v1/executions` (RUN mode) → 202 `{ id, accessToken }`
-- [ ] API: `ExecutionDispatcher` (@Async) + `WorkerClient` (RestClient)
-- [ ] API: `GET /executions/{id}`, `/output`, `DELETE /executions/{id}`
+- [x] API: `POST /api/v1/executions` (RUN mode) → 202 `{ id, accessToken, status }`
+- [x] API: `ExecutionDispatcher` (@Async, bounded executor) + `WorkerClient` (RestClient); keeps a cancel that happens mid-run
+- [x] API: `GET /executions/{id}`, `/output`, `/events` (gunzipped trace), `DELETE /executions/{id}` (cancel if running, else delete)
 - [x] Status machine (QUEUED → RUNNING → COMPLETED / COMPILE_ERROR / RUNTIME_ERROR / TIMEOUT / LIMIT_EXCEEDED / FAILED / CANCELLED) — transitions on the `Execution` entity
 - [x] javac error parser → `compileErrors[{line, column, message}]` — `common/job/JavacErrorParser` (tested against real javac output)
-- [ ] Per-execution access token (anonymous access control)
-- [ ] Source size limit (64 KB), request size limit (128 KB)
+- [x] Per-execution access token (anonymous access control) — only SHA-256 stored; wrong token = 404
+- [~] Source size limit (64 KB, counted in UTF-8 bytes) + stdin 8 KB. **Left:** request body size limit (128 KB)
 - [ ] Rate limiting (Bucket4j)
-- [ ] Sandbox security tests: infinite loop, `System.exit`, fork bomb, file write, network call, OOM
+- [ ] Sandbox security tests: infinite loop, `System.exit`, fork bomb, file write, network call, OOM (needs Docker)
+- [x] Extra: `HostDevRunner` — DEV ONLY, no isolation; `WORKER_RUNNER=host`, refuses under prod profile. Used for local end-to-end runs without Docker
 
 ## Step B5 — Tracer / Visualize Mode (Phase 4)
 
@@ -141,3 +142,4 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - 2026-11-21: Step B2 complete. 3 concept endpoints, 8 operations. Every trace checked by `ConceptTraceAssertions` (lines point at real code, refs exist, highlight indexes in range, stdout only grows). 59 tests pass (`mvnw verify`). Real responses recorded into frontend `src/test/fixtures/concepts/` and validated there with Zod + loop detection.
 - 2026-11-21: Step B3 code done using the local MySQL path (no Docker): deps, V1 migration, entities, repositories, compose file, local DB script. Not yet run against MySQL — waiting for `create-local-db.sql` (local MySQL listens on **3300**). B4 Docker-free pieces: EntryClassDetector, JavacErrorParser, DockerCommandBuilder, BoundedOutput, sandbox Dockerfile + run.sh. 106 tests pass, 4 DB tests skipped. Note: the API now needs MySQL to start (concept endpoints included).
 - 2026-11-23: Local MySQL set up (service had stopped after a reboot; port 3300). V1 migration applied, schema validation passes, persistence tests pass, API starts and serves concept endpoints. Found and fixed: Boot 4 `@DataJpaTest` did not roll back, so test rows were committed — contract class is now `@Transactional` (leftover rows deleted).
+- 2026-11-23: B4 pipeline works end to end locally (API on 8090 + local MySQL + worker with host runner): hello world COMPLETED, compile error with line/column, infinite loop TIMEOUT at 5 s, stdin, wrong token 404, delete 204, workspaces cleaned. Found: Boot 4 has no `RestClient.Builder` bean without its starter — WorkerClient now uses `RestClient.builder()`; added `ApiContextLocalMySqlTest` (full context, runs with DB_URL) to catch wiring like that. 140 tests, 4 skipped without DB.

@@ -33,6 +33,13 @@ javmotion:
   version: @project.version@
   cors:
     allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+  execution:
+    max-source-bytes: 65536   # doc §4.4
+    max-stdin-bytes: 8192
+  worker:
+    base-url: ${WORKER_BASE_URL}
+    token: ${WORKER_TOKEN}
+    timeout: 30s              # longest sandbox run (10 s visualize) + container start
 
 management:
   endpoints:

@@ -29,3 +29,6 @@ application-local.yml
 ### OS ###
 .DS_Store
 Thumbs.db
+
+# worker job workspaces (dev)
+.jobs/

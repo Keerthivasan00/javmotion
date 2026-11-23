@@ -36,6 +36,15 @@ Java 21 · Spring Boot 4.2 · Maven (wrapper) · Jackson 3 · Spring Data JPA ·
 ./mvnw -pl javmotion-api -am spring-boot:run   # API on http://localhost:8080
 ```
 
+Run code end to end without Docker (dev only — the host runner does **not** isolate code):
+
+```bash
+WORKER_RUNNER=host ./mvnw -pl javmotion-worker -am spring-boot:run      # worker on :8081
+DB_URL=jdbc:mysql://localhost:3300/javmotion PORT=8090 ./mvnw -pl javmotion-api -am spring-boot:run
+curl -X POST localhost:8090/api/v1/executions -H 'Content-Type: application/json'   -d '{"sourceCode":"public class Main { public static void main(String[] a) { System.out.println(42); } }","language":"java","mode":"RUN"}'
+# → {"id":"…","accessToken":"…","status":"QUEUED"}; then GET /api/v1/executions/{id} with header X-Execution-Token
+```
+
 Check it:
 
 ```bash
@@ -55,6 +64,8 @@ Different port: `PORT=8090 ./mvnw -pl javmotion-api -am spring-boot:run` (then u
 | `WORKER_TOKEN` | `dev-worker-token` | worker (later api too) |
 | `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` | dev: `jdbc:mysql://localhost:3306/javmotion`, `javmotion`, `javmotion`; prod: required | api |
 | `SANDBOX_IMAGE`, `SANDBOX_MAX_CONCURRENT`, `JOBS_DIR` | see `application.yml` | worker |
+| `WORKER_BASE_URL`, `WORKER_TOKEN` | dev: `http://localhost:8081`, `dev-worker-token`; prod: required | api |
+| `WORKER_RUNNER` | `docker` | worker — `host` = **dev only, runs code on your machine with no sandbox** |
 
 JWT and other settings arrive with their checklist steps.
 

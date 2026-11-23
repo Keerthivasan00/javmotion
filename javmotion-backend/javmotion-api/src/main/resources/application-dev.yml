@@ -7,6 +7,11 @@ spring:
     username: ${DB_USERNAME:javmotion}
     password: ${DB_PASSWORD:javmotion}
 
+javmotion:
+  worker:
+    base-url: ${WORKER_BASE_URL:http://localhost:8081}
+    token: ${WORKER_TOKEN:dev-worker-token}
+
 logging:
   level:
     com.javmotion: DEBUG
