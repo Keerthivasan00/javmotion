@@ -1,4 +1,5 @@
 export { CodeEditor } from './CodeEditor'
+export { toMarkers, type EditorDiagnostic } from './markers'
 export { EditorToolbar } from './EditorToolbar'
 export { useEditorStore } from './editorStore'
 export { TEMPLATES, type CodeTemplate } from './templates'

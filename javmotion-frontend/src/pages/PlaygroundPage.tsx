@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
   Group,
   Panel,
@@ -9,6 +9,12 @@ import {
 import { DemoPicker } from '@/features/concepts'
 import { ConsolePanel } from '@/features/console'
 import { CodeEditor, EditorToolbar } from '@/features/editor'
+import {
+  ExecutionStatusBar,
+  RunControls,
+  submitRun,
+  useExecutionOutput,
+} from '@/features/execution'
 import { VisualizationPanel } from '@/features/visualizers'
 import { useMediaQuery } from '@/lib/utils/useMediaQuery'
 import { cn } from '@/lib/utils/cn'
@@ -27,7 +33,7 @@ export default function PlaygroundPage() {
 
   return (
     <div className="flex h-full flex-col">
-      <EditorToolbar />
+      <EditorToolbar run={<RunControls />} status={<ExecutionStatusBar />} />
       <div className="min-h-0 flex-1">{isDesktop ? <DesktopLayout /> : <MobileLayout />}</div>
     </div>
   )
@@ -50,7 +56,7 @@ function DesktopLayout() {
           onLayoutChanged={inner.onLayoutChanged}
         >
           <Panel id="editor" defaultSize="55" minSize="25">
-            <CodeEditor />
+            <PlaygroundEditor />
           </Panel>
           <Separator className={cn('w-1', handle)} />
           <Panel id="visualization" defaultSize="45" minSize="25">
@@ -90,10 +96,17 @@ function MobileLayout() {
         ))}
       </div>
       <div className="min-h-0 flex-1">
-        {tab === 'Code' && <CodeEditor />}
+        {tab === 'Code' && <PlaygroundEditor />}
         {tab === 'Visualize' && <VisualizationPanel empty={<DemoPicker />} />}
         {tab === 'Console' && <ConsolePanel />}
       </div>
     </div>
   )
+}
+
+/** Editor wired to the current run: compile errors underline, Ctrl+Enter runs. */
+function PlaygroundEditor() {
+  const output = useExecutionOutput().data
+  const diagnostics = useMemo(() => output?.compileErrors ?? [], [output])
+  return <CodeEditor diagnostics={diagnostics} onRun={() => void submitRun()} />
 }

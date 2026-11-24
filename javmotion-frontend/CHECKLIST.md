@@ -4,7 +4,7 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Step 6 (Run code) — needs backend B3 (DB) + B4 (worker/sandbox, needs Docker) first. Meanwhile: manual browser check of Concepts page against a running API.
+**Next up:** Step 7 (Visualize real code) — needs backend B5 (JDI tracer in `javmotion-tracer`, port from `spikes/jdi-spike`). Manual browser check of Run: start worker (`WORKER_RUNNER=host`) + API on 8090 (`.env.development.local` already points there).
 
 **Last updated:** 2026-11-21
 
@@ -79,13 +79,13 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 
 ## Step 6 — Run Code / Compiler (Phase 3)
 
-- [ ] `executionApi.ts`: create, status, output, events
-- [ ] `useRunCode`: submit + poll every 500ms until terminal status
-- [ ] Run button wired; Ctrl+Enter shortcut
-- [ ] `ExecutionStatusBar` (queued / running / success / error + duration)
-- [ ] Compile errors → Monaco markers
-- [ ] Runtime exception, timeout, limit-exceeded, 429 messages
-- [ ] Optional stdin input box
+- [x] `executionApi.ts`: create, status, output, cancel (events comes with Step 7)
+- [x] `useRunCode`: `submitRun()` + `useExecutionStatus` polls every 500 ms until terminal; submit state in `runStore` so every component agrees
+- [x] Run button wired (becomes Stop while running → DELETE); Ctrl+Enter in Monaco and anywhere on the page
+- [x] `ExecutionStatusBar` (queued / running / success / error + duration, "Waking up server…")
+- [x] Compile errors → Monaco markers (`toMarkers`, clamped) + Errors tab with line:column, opens by itself
+- [x] Runtime exception, timeout, limit-exceeded, 429, network messages
+- [x] Optional stdin input box (Console → Input tab)
 
 ## Step 7 — Visualize Real Code (Phase 4)
 
@@ -149,3 +149,4 @@ Architecture: [docs/architecture/frontend-architecture.md](docs/architecture/fro
 - 2026-11-21: Recorded real backend concept responses into `src/test/fixtures/concepts/` + `conceptFixtures.test.ts` (schema, lines→code, default tab, loop detection). 69 tests pass.
 - 2026-11-21: Step 5 complete. `features/concepts/` (api, form, CodeView, DemoPicker, presets). `VisualizationPanel` now takes `source` + `empty` props. Do-while loops: condition read from the `} while (...)` line and badge shown there. 81 tests pass (page tests mock fetch with real recorded backend responses); build, lint, prettier clean. Not checked in a real browser yet. Note: `.env.development` points to port 8080, which a local Apache uses — run the API with `PORT=8090` and set `VITE_API_BASE_URL` in `.env.development.local`.
 - 2026-11-21: Heads-up from backend B3: the API now needs MySQL to start, so the Concepts page and "Try a demo" need the DB set up too (see backend README → Prerequisites).
+- 2026-11-24: Step 6 complete. `features/execution/` (api, runStore, useRunCode, RunControls, ExecutionStatusBar). Editor/toolbar take slots/props so `editor` does not import `execution` (Playground page composes them). Console tab is derived during render (no effects). 91 tests pass; build, lint, prettier clean. Not yet clicked through in a real browser.

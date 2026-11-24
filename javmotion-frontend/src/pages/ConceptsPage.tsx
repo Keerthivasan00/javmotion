@@ -135,7 +135,7 @@ function ConceptView({ kind }: { kind: ConceptKind }) {
           />
         </div>
         <div className="h-36 shrink-0 border-t">
-          <ConsolePanel />
+          <ConsolePanel runs={false} />
         </div>
       </section>
     </div>

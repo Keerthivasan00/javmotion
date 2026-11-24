@@ -1,13 +1,19 @@
-import { Clapperboard, Play, RotateCcw, WandSparkles } from 'lucide-react'
+import type { ReactNode } from 'react'
+import { Clapperboard, RotateCcw, WandSparkles } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { useEditorStore } from './editorStore'
 import { formatJava } from './formatJava'
 import { TEMPLATES } from './templates'
 
-/**
- * Run / Visualize are UI-only until Step 6 / Step 7.
- */
-export function EditorToolbar() {
+interface EditorToolbarProps {
+  /** Run / Stop controls (execution feature). */
+  run?: ReactNode
+  /** Run status, shown after the buttons. */
+  status?: ReactNode
+}
+
+/** Visualize is UI-only until Step 7. */
+export function EditorToolbar({ run, status }: EditorToolbarProps) {
   const reset = useEditorStore((s) => s.reset)
   const loadTemplate = useEditorStore((s) => s.loadTemplate)
 
@@ -19,9 +25,7 @@ export function EditorToolbar() {
 
   return (
     <div className="flex h-12 shrink-0 items-center gap-2 border-b bg-surface px-3">
-      <Button size="sm" disabled title="Coming in Step 6">
-        <Play size={16} /> Run
-      </Button>
+      {run}
       <Button size="sm" variant="accent" disabled title="Coming in Step 7">
         <Clapperboard size={16} /> Visualize
       </Button>
@@ -31,8 +35,9 @@ export function EditorToolbar() {
       <Button size="sm" variant="ghost" onClick={format} title="Re-indent code">
         <WandSparkles size={16} /> Format
       </Button>
+      <div className="min-w-0 flex-1">{status}</div>
 
-      <label className="ml-auto flex items-center gap-2 text-sm text-muted">
+      <label className="flex shrink-0 items-center gap-2 text-sm text-muted">
         <span className="hidden sm:inline">Template</span>
         <select
           className="h-8 rounded-md border bg-surface-2 px-2 text-sm text-fg"
