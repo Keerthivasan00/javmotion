@@ -12,6 +12,8 @@ worker:
   jobs-dir: ${JOBS_DIR:./.jobs}
   # docker (default, real sandbox) | host (DEV ONLY: runs code on this machine without isolation)
   runner: ${WORKER_RUNNER:docker}
+  # Host runner only (VISUALIZE). Relative to where the worker starts (javmotion-backend/).
+  tracer-jar: ${TRACER_JAR:javmotion-tracer/target/javmotion-tracer.jar}
   # Container limits — backend doc §5.2. pids-limit 64 may be too low for tracer + debuggee
   # (two JVMs); re-check with spikes/jdi-spike/docker-test.sh before raising.
   limits:

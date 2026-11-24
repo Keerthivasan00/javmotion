@@ -9,7 +9,7 @@ RUN groupadd --gid 10001 sandbox \
  && mkdir -p /sandbox/src /sandbox/out /opt/javmotion
 
 COPY docker/run.sh /sandbox/run.sh
-COPY javmotion-tracer/target/javmotion-tracer-*.jar /opt/javmotion/tracer.jar
+COPY javmotion-tracer/target/javmotion-tracer.jar /opt/javmotion/tracer.jar
 RUN chmod 755 /sandbox/run.sh && chmod 644 /opt/javmotion/tracer.jar
 
 USER 10001:10001

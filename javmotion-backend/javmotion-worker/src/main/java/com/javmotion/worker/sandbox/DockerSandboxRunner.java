@@ -45,7 +45,10 @@ public class DockerSandboxRunner implements SandboxRunner {
         String compileOutput = Files.exists(marker)
                 ? Files.readString(ws.out().resolve("compile.txt"), StandardCharsets.UTF_8)
                 : null;
-        return ResultMapper.map(run, compileOutput, timeout, props.limits().maxOutputBytes(), true);
+        JobResult result = ResultMapper.map(run, compileOutput, timeout, props.limits().maxOutputBytes(), true);
+        return spec.mode() == ExecutionMode.VISUALIZE
+                ? TraceAttacher.attach(result, ws.out().resolve("trace.json"))
+                : result;
     }
 
     private static void dockerKill(String container) {

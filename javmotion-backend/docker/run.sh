@@ -30,7 +30,8 @@ case "$MODE" in
   VISUALIZE)
     # Tracer JVM is small; it launches the debuggee with the flags above (spike finding: two JVMs
     # share the container's memory and pids budget).
-    exec java -Xmx64m -XX:+UseSerialGC -jar /opt/javmotion/tracer.jar "$CLASSES" "$CLASS" /sandbox/out/trace.json
+    # Last arg: tracer stops itself after 7 s (worker hard timeout is 10 s) so a trace survives.
+    exec java -Xmx64m -XX:+UseSerialGC -jar /opt/javmotion/tracer.jar "$CLASSES" "$CLASS" /sandbox/out/trace.json 7000
     ;;
   *)
     echo "unknown mode: $MODE" >&2

@@ -27,7 +27,7 @@ class JobServiceTest {
 
     private WorkerProperties props(int maxConcurrent) {
         return new WorkerProperties("t", "img", maxConcurrent, jobsDir,
-                new WorkerProperties.Limits("256m", "1", 64, "16m", Duration.ofSeconds(5), Duration.ofSeconds(10), 65536));
+                new WorkerProperties.Limits("256m", "1", 64, "16m", Duration.ofSeconds(5), Duration.ofSeconds(10), 65536), Path.of("tracer.jar"));
     }
 
     private static JobResult ok() {

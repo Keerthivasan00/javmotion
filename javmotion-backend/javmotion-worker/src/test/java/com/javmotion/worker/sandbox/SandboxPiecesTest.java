@@ -16,7 +16,7 @@ class SandboxPiecesTest {
 
     private static final WorkerProperties PROPS = new WorkerProperties(
             "t", "javmotion-sandbox:21", 4, Path.of("/var/javmotion/jobs"),
-            new WorkerProperties.Limits("256m", "1", 64, "16m", Duration.ofSeconds(5), Duration.ofSeconds(10), 65536));
+            new WorkerProperties.Limits("256m", "1", 64, "16m", Duration.ofSeconds(5), Duration.ofSeconds(10), 65536), Path.of("tracer.jar"));
 
     private static final UUID JOB = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
     private static final Path SRC = Path.of("/var/javmotion/jobs/x/src").toAbsolutePath();

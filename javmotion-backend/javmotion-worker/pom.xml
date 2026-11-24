@@ -32,6 +32,14 @@
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Not used by worker code: only makes the reactor build the tracer jar first, so the
+             host-runner VISUALIZE tests can run it (javmotion-tracer/target/javmotion-tracer.jar). -->
+        <dependency>
+            <groupId>com.javmotion</groupId>
+            <artifactId>javmotion-tracer</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

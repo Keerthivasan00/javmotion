@@ -4,7 +4,7 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 **Legend:** `[ ]` not started · `[~]` partial (note what is left) · `[x]` done
 
-**Next up:** Frontend Step 6 (Run button → `POST /executions` + polling, compile errors as Monaco markers). Backend leftovers in B4: rate limiting (Bucket4j), request size limit, orphan container sweeper, Docker runner + security tests (need Docker). Local dev: MySQL80 on port **3300**; worker with `WORKER_RUNNER=host` (no sandbox!).
+**Next up:** Restart the local API from a fresh build and check VISUALIZE end to end, then frontend Step 7. Backend leftovers: rate limiting (Bucket4j), request size limit, orphan container sweeper, Docker runner + security tests (need Docker). Local dev: MySQL80 on port **3300**; worker with `WORKER_RUNNER=host` (no sandbox!).
 
 **Last updated:** 2026-11-21
 
@@ -75,19 +75,19 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 
 ## Step B5 — Tracer / Visualize Mode (Phase 4)
 
-- [ ] `javmotion-tracer`: `TracerMain` (LaunchingConnector)
-- [ ] StepRequest (STEP_LINE, STEP_INTO) + class exclusions
-- [ ] MethodEntry / MethodExit → CALL / RETURN (+ return value)
-- [ ] ExceptionRequest → EXCEPTION
-- [ ] `StateCapture`: frames, locals, heap BFS with stable `h<id>`
-- [ ] stdout pump → cumulative `stdout` per step
-- [ ] Limits: 5000 steps, 10 MB, 200 objects/step, 100 array elements, 1000 chars
-- [ ] `TraceWriter` → `/sandbox/out/trace.json`
-- [ ] Sandbox image includes `tracer.jar`; `run.sh` VISUALIZE mode (`javac -g`)
-- [ ] Worker validates trace (size + schema) — untrusted
-- [ ] API stores gzipped trace in `execution_traces`
-- [ ] `GET /executions/{id}/events`
-- [ ] Golden-file tracer tests (sample programs → expected traces)
+- [x] `javmotion-tracer`: `TracerMain` (ProcessBuilder + SocketListen instead of LaunchingConnector — spike finding); passes program stdout/stderr + exit code through; exit 70 = tracer failed
+- [x] StepRequest (STEP_LINE, STEP_INTO) + class exclusions; stepping stops when main returns
+- [x] CALL (breakpoint at main + deeper stack) / RETURN via MethodExit (+ return value)
+- [x] ExceptionRequest → EXCEPTION (type + detailMessage)
+- [x] `StateCapture` (`HeapCapture` + frame capture): frames with stable ids, locals + `this`, heap BFS with stable `h<uniqueID>`, cycles, NaN as string
+- [x] stdout → cumulative `stdout` per step (synchronous drain per event, not a pump thread)
+- [x] Limits: 5000 steps, 10 MB, 200 objects/step, 100 array elements, 1000 chars + own time budget (bounded event wait — a one-line endless loop sends no events)
+- [x] Trace written as JSON (Jackson + common model) to the given path
+- [~] Sandbox image includes `tracer.jar` (shaded `javmotion-tracer.jar`); `run.sh` VISUALIZE mode (`javac -g`, 7 s tracer budget). **Left:** build/run the image (Docker)
+- [x] Worker validates trace (size ≤ 11 MB + parse into the model) — `TraceAttacher`; truncated → LIMIT_EXCEEDED with the partial trace
+- [x] API stores gzipped trace in `execution_traces` (dispatcher, done in B4)
+- [x] `GET /executions/{id}/events` (done in B4)
+- [x] Tracer tests on real programs (loop line shape = frontend fixtures, recursion, exception, heap, step/time limits, stdin EOF) + worker host-runner VISUALIZE tests
 
 ## Step B6 — Advanced Visualization Support (Phase 5)
 
@@ -143,3 +143,4 @@ Architecture: [docs/architecture/backend-architecture.md](docs/architecture/back
 - 2026-11-21: Step B3 code done using the local MySQL path (no Docker): deps, V1 migration, entities, repositories, compose file, local DB script. Not yet run against MySQL — waiting for `create-local-db.sql` (local MySQL listens on **3300**). B4 Docker-free pieces: EntryClassDetector, JavacErrorParser, DockerCommandBuilder, BoundedOutput, sandbox Dockerfile + run.sh. 106 tests pass, 4 DB tests skipped. Note: the API now needs MySQL to start (concept endpoints included).
 - 2026-11-23: Local MySQL set up (service had stopped after a reboot; port 3300). V1 migration applied, schema validation passes, persistence tests pass, API starts and serves concept endpoints. Found and fixed: Boot 4 `@DataJpaTest` did not roll back, so test rows were committed — contract class is now `@Transactional` (leftover rows deleted).
 - 2026-11-23: B4 pipeline works end to end locally (API on 8090 + local MySQL + worker with host runner): hello world COMPLETED, compile error with line/column, infinite loop TIMEOUT at 5 s, stdin, wrong token 404, delete 204, workspaces cleaned. Found: Boot 4 has no `RestClient.Builder` bean without its starter — WorkerClient now uses `RestClient.builder()`; added `ApiContextLocalMySqlTest` (full context, runs with DB_URL) to catch wiring like that. 140 tests, 4 skipped without DB.
+- 2026-11-24: Step B5 done: real JDI tracer in `javmotion-tracer` (shaded jar), worker VISUALIZE on host + docker runners with trace validation. Found and fixed: (1) a one-line endless loop sends no STEP_LINE events, so the tracer waited forever — event wait is now bounded by the deadline; (2) killing the debuggee right after VMDisconnect turned exit 0 into 1 — now waits for a natural exit first. Tracer tests have `@Timeout`. End-to-end through the API not re-checked: `mvnw verify` overwrote the API jar while the local API was running from it (repackage then failed on the locked file), so that API instance must be restarted from a fresh build.
