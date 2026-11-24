@@ -32,3 +32,6 @@ Thumbs.db
 
 # worker job workspaces (dev)
 .jobs/
+
+# VS Code Java extension build output
+target_test-classes/
